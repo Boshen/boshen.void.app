@@ -13,7 +13,11 @@ jobs:
         with:
           node-version: lts/*
           cache: pnpm
+          registry-url: https://npm.pkg.github.com
+          scope: '@void-sdk'
       - run: pnpm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: pnpm void deploy
         env:
           VOID_TOKEN: ${{ secrets.VOID_TOKEN }}
