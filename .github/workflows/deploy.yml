@@ -18,6 +18,6 @@ jobs:
       - run: pnpm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-      - run: pnpm void deploy
+      - run: pnpm void deploy --project boshen
         env:
           VOID_TOKEN: ${{ secrets.VOID_TOKEN }}
